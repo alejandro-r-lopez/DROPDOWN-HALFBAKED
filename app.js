@@ -14,13 +14,17 @@ let headCount = 0;
 let middleCount = 0;
 let bottomCount = 0;
 
-let catchphrases = [];
+displayStats();
 // set state for how many times the user changes the head, middle, and bottom
 // set state for all of the character's catchphrases
+reportEl.textContent = `You have changed the head ${headCount} times. 
+    You have changed the middle ${middleCount} times.
+    You have changed the bottom ${bottomCount} times.`;
 
 headDropdown.addEventListener('change', () => {
     headEl.style.backgroundImage = `url("./assets/${headDropdown.value}-head.png")`;
     headCount++;
+    displayStats();
 
     // get the value of the head dropdown
     // increment the head change count state
@@ -31,6 +35,7 @@ headDropdown.addEventListener('change', () => {
 middleDropdown.addEventListener('change', () => {
     middleEl.style.backgroundImage = `url("./assets/${middleDropdown.value}-middle.png")`;
     middleCount++;
+    displayStats();
     // get the value of the middle dropdown
     // increment the middle change count state
     // update the dom for the middle (NOTE: use style.backgroundImage on the middleEl div instead of trying to set the .src -- it's NOT an img tag!)
@@ -40,6 +45,7 @@ middleDropdown.addEventListener('change', () => {
 bottomDropdown.addEventListener('change', () => {
     bottomEl.style.backgroundImage = `url("./assets/${bottomDropdown.value}-pants.png")`;
     bottomCount++;
+    displayStats();
     // get the value of the bottom dropdown
     // increment the bottom change count state
     // update the dom for the bottom (NOTE use style.backgroundImage on the bottomEl div instead of trying to set the .src -- it's NOT an img tag!)
@@ -57,7 +63,10 @@ catchphraseButton.addEventListener('click', () => {
 });
 
 function displayStats() {
-    reportEl.textContent = headCount;
+    reportEl.textContent = `You have changed the head ${headCount} times. 
+    You have changed the middle ${middleCount} times.
+    You have changed the bottom ${bottomCount} times.`;
+
     // text content of the reportEl to tell the user how many times they've changed each piece of the state
 }
 
