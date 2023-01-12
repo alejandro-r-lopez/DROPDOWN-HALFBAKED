@@ -9,6 +9,9 @@ const reportEl = document.getElementById('report');
 const catchphrasesEl = document.getElementById('catchphrases');
 const catchphraseInput = document.getElementById('catchphrase-input');
 const catchphraseButton = document.getElementById('catchphrase-button');
+const nameEl = document.getElementById('name');
+const nameInput = document.getElementById('name-input');
+const nameButton = document.getElementById('name-button');
 
 let headCount = 0;
 let middleCount = 0;
@@ -57,6 +60,11 @@ function displayCatchphrases() {
         catchphrasesEl.append(newCatchphrase);
     }
 }
+
+nameButton.addEventListener('click', () => {
+    nameEl.textContent = nameInput.value;
+});
+
 // clear out the DOM for the currently displayed catchphrases
 // loop through each catchphrase in state
 // and for each catchphrase

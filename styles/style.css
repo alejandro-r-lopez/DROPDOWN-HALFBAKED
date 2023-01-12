@@ -97,6 +97,7 @@ main {
     justify-content: center;
     align-items: center;
     height: 100%;
+    position: relative;
 }
 
 .picker {
@@ -134,4 +135,13 @@ main {
     font-size: 2rem;
     font-family: cursive;
     text-align: center;
+}
+
+/* * {
+    border: solid 1px;
+} */
+
+.name {
+    position: absolute;
+    bottom: 800px;
 }
